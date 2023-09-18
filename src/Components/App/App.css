@@ -1,0 +1,23 @@
+/* #root {
+  max-width: 1280px;
+  
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+body {
+  color:black;
+  background-color: aliceblue;
+  margin: 0;
+  padding: 0;
+}
+
+/* body::-webkit-scrollbar {
+  background: purple;
+} */
+
+/* .App {
+  margin-left: 5rem;
+  padding: 1rem;
+} */
