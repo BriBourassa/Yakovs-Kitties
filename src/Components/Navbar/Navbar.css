@@ -1,73 +1,106 @@
-.navbar {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: aqua; */
-  padding: 40px;
+  padding: 20px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
+  border-bottom: 4px solid black;
 }
 
 img {
   height: 8rem;
   padding: 1rem;
+  margin-right: 4rem;
 }
 
-.navbar-nav {
+.navbar-ul {
   width: 100%;
   padding: 0;
   padding-top: 0;
   margin: 0;
   list-style: none;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .nav-item {
   margin: 0;
-  padding: 0;
+  padding: 0.7rem;
+  background-color: transparent;
+  border-radius: 10px;
 }
 
 .nav-link {
+  --link-color: black;
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: var(--link-color);
   margin-right: 40px;
-  transition: 200ms;
+  position: relative;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--link-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  transform-origin: center;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+  transform: translateX(-50%);
 }
 
 .nav-link:hover {
-  /* filter: grayscale(0%) opacity(1); */
-  background: lightblue;
+  color: var(--link-color);
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.nav-link:focus,
+.nav-link:active {
+  outline: none;
+  text-decoration: overline;
+}
+
+.nav-link.donate {
+  --link-color: red;
+  background-color: pink;
+  border-radius: 10px;
+  padding: 7px;
+}
+
+.nav-link.adopt {
+  --link-color: blueviolet;
+}
+
+.nav-link.about {
+  --link-color: orange;
+}
+
+.nav-link.lost {
+  --link-color: green;
 }
 
 .link-text {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
-
-/* .navbar:hover {
-    width: 16rem;
-} */
-
-/* .navbar:hover .link-text {
-    display: block;
-} */
-
-/* .fa-primary {
-    color: pink;
-}
-
-.fa-secondary {
-    color: purple; 
-}
-
-.fa-primary,
-.fa-secondary {
-    transition: color 600ms ease;
-} */
 
 /* @media only screen and (max-width: 600px) {
     
